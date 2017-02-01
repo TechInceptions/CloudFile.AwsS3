@@ -57,8 +57,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Errors.cs" />
+    <Compile Include="GlobalConstants.cs" />
     <Compile Include="S3Access.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="S3Writer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

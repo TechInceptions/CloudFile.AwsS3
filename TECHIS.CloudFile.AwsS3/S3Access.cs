@@ -19,15 +19,20 @@ namespace TECHIS.CloudFile.AwsS3
 
         #region Properties 
 
+        protected Amazon.S3.AmazonS3Client S3Client
+        {
+            get { return _S3Client; }
+        }
 
         public virtual Encoding Encoding { get; protected set; }
 
-        public bool IsClientValid { get; }
-        public bool IsValidBucket { get; protected set; }
+        public bool IsClientValid { get; private set; }
 
-        public abstract string KeySecretSeperator
+
+        public abstract char[] KeySeperator
         { get; }
 
+        public virtual bool TrimConnectionInputs => true;
         public string BucketName { get; protected set; }
 
         #endregion
@@ -41,7 +46,7 @@ namespace TECHIS.CloudFile.AwsS3
         public void Connect(string secretKeyAccessKeyBucketName, Encoding encoding = null)
         {
             InputValidator.ArgumentNullOrEmptyCheck(secretKeyAccessKeyBucketName, nameof(secretKeyAccessKeyBucketName));
-            var parts = secretKeyAccessKeyBucketName.Split(new[] { KeySecretSeperator }, StringSplitOptions.None);
+            var parts = secretKeyAccessKeyBucketName.Split(KeySeperator, StringSplitOptions.None);
 
             if (parts.Length<3)
             {
@@ -61,7 +66,7 @@ namespace TECHIS.CloudFile.AwsS3
             InputValidator.ArgumentNullOrEmptyCheck(accessKeyBucketName, nameof(accessKeyBucketName));
             InputValidator.ArgumentNullOrEmptyCheck(secret, nameof(secret));
 
-            var parts = accessKeyBucketName.Split(new[] { KeySecretSeperator }, StringSplitOptions.None);
+            var parts = accessKeyBucketName.Split(KeySeperator, StringSplitOptions.None);
             if (parts.Length<2)
             {
                 throw new ArgumentException(Errors.ConnectionStringInvalid, accessKeyBucketName);
@@ -74,6 +79,13 @@ namespace TECHIS.CloudFile.AwsS3
         #region Private Methods 
         private void Connect(string accessKey, string bucketName, string secret, Encoding encoding)
         {
+            if (TrimConnectionInputs)
+            {
+                accessKey   = accessKey?.Trim();
+                bucketName  = bucketName?.Trim();
+                secret      = secret?.Trim();
+            }
+
             InputValidator.ArgumentNullOrEmptyCheck(accessKey,  nameof(accessKey));
             InputValidator.ArgumentNullOrEmptyCheck(bucketName, nameof(bucketName));
             InputValidator.ArgumentNullOrEmptyCheck(secret,     nameof(secret));
@@ -88,6 +100,7 @@ namespace TECHIS.CloudFile.AwsS3
             _Key = accessKey;
             _Secret = secret;
             BucketName = bucketName;
+            IsClientValid = true;
         }
         #endregion
 
@@ -95,10 +108,12 @@ namespace TECHIS.CloudFile.AwsS3
         {
             _S3Client?.Dispose();
             _S3Client = new Amazon.S3.AmazonS3Client(_Key, _Secret);
+            IsClientValid = true;
         }
 
         public void Dispose()
         {
+            IsClientValid = false;
             ((IDisposable)_S3Client)?.Dispose();
         }
     }
