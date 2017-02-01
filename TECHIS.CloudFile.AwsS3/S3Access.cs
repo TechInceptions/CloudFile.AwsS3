@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TECHIS.CloudFile;
 
-namespace AWSS3Sample
+namespace TECHIS.CloudFile.AwsS3
 {
     public class S3Access
     {

@@ -7,8 +7,8 @@
     <ProjectGuid>{DE32564C-D9BD-4674-98BC-8D4EB2C888C1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AWSS3Sample</RootNamespace>
-    <AssemblyName>AWSS3Sample</AssemblyName>
+    <RootNamespace>TECHIS.CloudFile.AwsS3</RootNamespace>
+    <AssemblyName>TECHIS.CloudFile.AwsS3</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

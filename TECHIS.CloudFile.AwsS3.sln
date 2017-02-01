@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSS3Sample", "AWSS3Sample\AWSS3Sample.csproj", "{DE32564C-D9BD-4674-98BC-8D4EB2C888C1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TECHIS.CloudFile.AwsS3", "TECHIS.CloudFile.AwsS3\TECHIS.CloudFile.AwsS3.csproj", "{DE32564C-D9BD-4674-98BC-8D4EB2C888C1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
