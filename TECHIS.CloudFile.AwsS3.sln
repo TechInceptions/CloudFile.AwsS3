@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TECHIS.CloudFile.AwsS3", "TECHIS.CloudFile.AwsS3\TECHIS.CloudFile.AwsS3.csproj", "{DE32564C-D9BD-4674-98BC-8D4EB2C888C1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TECHIS.CloudFile.S3", "S3\TECHIS.CloudFile.S3.csproj", "{1A7666F9-FC18-43AF-94DE-DF4F6A2C9A38}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,12 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DE32564C-D9BD-4674-98BC-8D4EB2C888C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DE32564C-D9BD-4674-98BC-8D4EB2C888C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DE32564C-D9BD-4674-98BC-8D4EB2C888C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DE32564C-D9BD-4674-98BC-8D4EB2C888C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A7666F9-FC18-43AF-94DE-DF4F6A2C9A38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A7666F9-FC18-43AF-94DE-DF4F6A2C9A38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A7666F9-FC18-43AF-94DE-DF4F6A2C9A38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A7666F9-FC18-43AF-94DE-DF4F6A2C9A38}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B7BC5DAD-2D84-4B65-B2C2-94EC27D52924}
 	EndGlobalSection
 EndGlobal
