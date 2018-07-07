@@ -56,10 +56,10 @@ namespace MSTestProject
             return ConnectedManager.ListAsync(path).Result;
         }
 
-        private ICloudFileManager ConnectedManager => (new Manager()).Connect(GetContainerUri());
+        private ICloudFileManager ConnectedManager => (new Manager()).Connect(GetConnectionInfo());
 
 
-        private static string GetContainerUri()
+        private static string GetConnectionInfo()
         {//techis-s3-test
             //BucketName|RegionName|SecretAccessKey|AccessKey|ProfileName
             //
