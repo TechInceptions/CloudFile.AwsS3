@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <PackageReference Include="AWSSDK.S3" Version="3.3.18.6" />
-    <PackageReference Include="TECHIS.Cloud.Configuration" Version="2.0.9" />
     <PackageReference Include="TECHIS.CloudFile" Version="0.2.0" />
     <PackageReference Include="TECHIS.Core" Version="4.0.6" />
   </ItemGroup>

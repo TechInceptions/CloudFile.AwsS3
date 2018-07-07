@@ -27,12 +27,12 @@ namespace TECHIS.CloudFile.S3
 
         public void WriteToBlob(Stream ms, string fileName)
         {
-            throw new NotImplementedException();
+            WriteToBlobAsync(ms, fileName).Wait();
         }
 
         public void WriteToBlob(byte[] data, string fileName)
         {
-            throw new NotImplementedException();
+            WriteToBlobAsync(data, fileName).Wait();
         }
 
         public async Task WriteToBlobAsync(Stream ms, string fileName)
@@ -46,9 +46,7 @@ namespace TECHIS.CloudFile.S3
             };
 
             PutObjectResponse response = await _S3Client.PutObjectAsync(request).ConfigureAwait(false);
-            
-
-            await _S3Client.PutObjectAsync(request);
+           
         }
 
         public async Task WriteToBlobAsync(byte[] data, string fileName)
