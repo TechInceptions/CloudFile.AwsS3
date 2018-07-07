@@ -17,17 +17,20 @@ namespace TECHIS.CloudFile.S3
         private AmazonS3Client _S3Client;
         private bool _UseDefaultClient = false;
 
+        public string BucketName { get; set; }
+        public string RegionName { get; set; }
         public string SecretAccessKey { get; set; }
         public string AccessKey { get; set; }
         public string ProfileName { get; set; }
-        public string RegionName { get; set; }
-        public string BucketName { get; set; }
 
 
-
+        /// <summary>
+        /// Get a connection info object for the S3 bucket
+        /// </summary>
+        /// <param name="pipeSeperatedConnectionInfo">a connection string in the following form: "BucketName|RegionName|SecretAccessKey|AccessKey|ProfileName".</param>
         public static ConnectionInfo Get(string pipeSeperatedConnectionInfo)
         {
-            InputValidator.ArgumentNullOrEmptyCheck(pipeSeperatedConnectionInfo);
+            pipeSeperatedConnectionInfo = pipeSeperatedConnectionInfo ?? string.Empty;
             ConnectionInfo connectionInfo = new ConnectionInfo();
             connectionInfo.SetInfo(pipeSeperatedConnectionInfo);
             return connectionInfo;
@@ -67,30 +70,30 @@ namespace TECHIS.CloudFile.S3
                    _UseDefaultClient = true;
                     break;
                 case 1:
-                   SecretAccessKey  = parts[0];
+                    BucketName = parts[0];
                     break;
                 case 2:
 
-                   SecretAccessKey  = parts[0];
-                   AccessKey        = parts[1];
+                    BucketName = parts[0];
+                    RegionName = parts[1];
                     break;
                 case 3:
-                    SecretAccessKey = parts[0];
-                    AccessKey       = parts[1];
-                    ProfileName     = parts[2];
+                    BucketName = parts[0];
+                    RegionName = parts[1];
+                    SecretAccessKey = parts[2];
                     break;
                 case 4:
-                   SecretAccessKey  = parts[0];
-                   AccessKey        = parts[1];
-                   ProfileName      = parts[2];
-                   RegionName       = parts[3];
+                    BucketName = parts[0];
+                    RegionName = parts[1];
+                    SecretAccessKey = parts[2];
+                    AccessKey = parts[3];
                     break;
                 case 5:
-                   SecretAccessKey  = parts[0];
-                   AccessKey        = parts[1];
-                   ProfileName      = parts[2];
-                   RegionName       = parts[3];
-                   BucketName       = parts[4];
+                   BucketName       = parts[0];
+                   RegionName       = parts[1];
+                   SecretAccessKey  = parts[2];
+                   AccessKey        = parts[3];
+                   ProfileName      = parts[4];
                     break;
                 default:
                     break;

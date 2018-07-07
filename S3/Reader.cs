@@ -40,6 +40,10 @@ namespace TECHIS.CloudFile.S3
 
 
             GetObjectResponse response = await _S3Client.GetObjectAsync(request).ConfigureAwait(false);
+            if (response!=null && response.ResponseStream!=null)
+            {
+                await response.ResponseStream.CopyToAsync(output);
+            }
             
         }
 
@@ -59,7 +63,6 @@ namespace TECHIS.CloudFile.S3
             string result = null;
             using (GetObjectResponse response = await _S3Client.GetObjectAsync(request).ConfigureAwait(false))
             {
-                response.ResponseStream.Position = 0;
                 using (StreamReader sr = new StreamReader(response.ResponseStream) )
                 {       
                     result = sr.ReadToEnd();
