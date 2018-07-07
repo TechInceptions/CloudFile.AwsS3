@@ -2,8 +2,20 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>TECHIS.CloudFile.S3</AssemblyName>
+    <AssemblyName>TECHIS.CloudFile.AwsS3</AssemblyName>
     <RootNamespace>TECHIS.CloudFile.S3</RootNamespace>
+    <Version>0.1.0.0</Version>
+    <Authors>Arinze, TECH-IS</Authors>
+    <Company>TECH-IS INC.</Company>
+    <Description># TECHIS.CloudFile.AwsS3
+AWS S3 implementation of the TECHIS.CloudFile interfaces.
+## TECHIS.CloudFile 
+Class interfaces for accessing files stored in cloud platforms like AWS or Azure</Description>
+    <Copyright>Copyright © TECH-IS INC. 2018</Copyright>
+    <PackageProjectUrl>http://techinceptions.com/Support/Packages/CloudFile</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/TechInceptions/CloudFile.AwsS3</RepositoryUrl>
+    <PackageTags>AWS S3 for CloudFile File TECHIS</PackageTags>
+    <PackageReleaseNotes>1st release</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
