@@ -28,7 +28,7 @@ namespace MSTestProject
         }
 
         [TestMethod]
-        public async void WriteReadTextAsync()
+        public async Task WriteReadTextAsync()
         {
             string input = $"Written by {nameof(WriteReadText)}";
             await WriterMethods.WriteTextAsync(FixedFileName, input);
@@ -61,7 +61,7 @@ namespace MSTestProject
         }
 
         [TestMethod]
-        public async void WriteReadData2Async()
+        public async Task WriteReadData2Async()
         {
             Encoding e = Encoding.UTF8;
             string input = $"Written by {nameof(WriteReadText)}";
