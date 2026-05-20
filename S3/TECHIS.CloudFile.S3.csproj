@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>TECHIS.CloudFile.AwsS3</AssemblyName>
     <RootNamespace>TECHIS.CloudFile.S3</RootNamespace>
-    <Version>0.1.0.0</Version>
+    <Version>0.1.0.1</Version>
     <Authors>Arinze, TECH-IS</Authors>
     <Company>TECH-IS INC.</Company>
     <Description># TECHIS.CloudFile.AwsS3
@@ -21,7 +21,7 @@ Class interfaces for accessing files stored in cloud platforms like AWS or Azure
   <ItemGroup>
     <PackageReference Include="AWSSDK.S3" Version="3.3.18.6" />
     <PackageReference Include="TECHIS.CloudFile" Version="0.2.0" />
-    <PackageReference Include="TECHIS.Core" Version="4.0.6" />
+    <PackageReference Include="TECHIS.Core" Version="6.0.3" />
   </ItemGroup>
 
 </Project>
